@@ -1,12 +1,14 @@
 # CampusRoute — Intelligent Campus Transportation Optimization
 
-**[ LIVE INTERACTIVE DEMO ](https://madhang12.github.io/Campus-transit-optimization/)**
+**[🚀 OPEN LIVE INTERACTIVE DEMO](https://madhang12.github.io/Campus-transit-optimization/)**
+
+**[📂 VIEW GITHUB REPOSITORY](https://github.com/madhang12/Campus-transit-optimization)**
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![Tests](https://img.shields.io/badge/tests-204%20cases-brightgreen) ![Dashboard](https://img.shields.io/badge/dashboard-offline%20HTML%2FJS-informational)
 
 A shuttle-planning pipeline that models 14 campus stops as a weighted graph and applies classic algorithms (MST, shortest paths, greedy scheduling, knapsack DP, Travelling Salesman) to cut **modelled** average passenger waiting time from **6.69 to 2.03 minutes**. An interactive dashboard lets you explore the results in a browser.
 
-> **Project origin.** This is a Design and Analysis of Algorithms (DAA) team project at Woxsen University. 
+> **Project origin.** This is a Design and Analysis of Algorithms (DAA) team project at Woxsen University.
 
 ![Dashboard hero screen](docs/screenshots/01_hero.png)
 
@@ -41,13 +43,13 @@ A shuttle is only useful if passengers do not wait long. With one shuttle visiti
 ## 5. Architecture
 ```mermaid
 flowchart LR
-  D[data/*.csv] --> G[graph.py]
-  G --> M[mst.py] & S[sssp.py] & A[apsp.py] & T[tsp.py]
-  D --> GR[greedy.py] & DP[dp.py]
-  T --> W[wait_model.py] --> SE[sensitivity.py]
-  M & S & GR & DP & W & SE --> DB[dashboard.py]
-  DB --> H[report/dashboard.html]
-  H -->|copy| P[docs/index.html - GitHub Pages]
+ D[data/*.csv] --> G[graph.py]
+ G --> M[mst.py] & S[sssp.py] & A[apsp.py] & T[tsp.py]
+ D --> GR[greedy.py] & DP[dp.py]
+ T --> W[wait_model.py] --> SE[sensitivity.py]
+ M & S & GR & DP & W & SE --> DB[dashboard.py]
+ DB --> H[report/dashboard.html]
+ H -->|copy| P[docs/index.html - GitHub Pages]
 ```
 
 ## 6. Technology stack
@@ -70,25 +72,27 @@ notebooks/walkthrough.ipynb
 
 ## 8. Installation and execution
 Requires Python 3.10+ and git.
+
 ```bash
-git clone https://github.com/YOUR-GITHUB-USERNAME/campus-transit-optimization.git
-cd campus-transit-optimization
+git clone https://github.com/madhang12/Campus-transit-optimization.git
+cd Campus-transit-optimization
 python3 -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-python main.py                   # runs every algorithm, writes report/
-pytest -q                        # runs the tests
-python scripts/verify_results.py # re-checks every reported number
-python scripts/make_figures.py   # redraws the extra charts
+python main.py
+pytest -q
+python scripts/verify_results.py
+python scripts/make_figures.py
 ```
-Open `report/dashboard.html` in a browser. To refresh the live demo after changes: `python main.py`, copy `report/dashboard.html` to `docs/index.html`, then commit and push.
+
+Open `report/dashboard.html` in a browser. To refresh the live demo after changes: run `python main.py`, copy `report/dashboard.html` to `docs/index.html`, then commit and push.
 
 ## 9. Sample output
 ```text
 [MST] Prim total = 5.8 min, Kruskal total = 5.8 min, match = True
 [SSSP] Dijkstra S2->S12: 3.3 min via Bus Stop -> Care and Cure -> Academic Blocks -> Library -> Oval -> Race Arena
 [TSP] File order 13.37 | Nearest neighbour 10.11 | MST preorder 10.11 | Optimal (Held-Karp) 9.92 min
-      MST approximation ratio = 1.019 (theory: <= 2.000)
+     MST approximation ratio = 1.019 (theory: <= 2.000)
 [Wait] file-order 6.68, MST 5.05, after (3 shuttles) 2.03 min -> 70% improvement
 ```
 (`main.py` prints 6.68 and the dashboard shows 6.69: the exact value is 6.685, rounded differently.)
@@ -97,7 +101,7 @@ Open `report/dashboard.html` in a browser. To refresh the live demo after change
 Re-run with `python main.py` on this repository's data.
 
 | Configuration | Average wait (min) |
-|---|---|
+|---|---:|
 | One shuttle, file order (baseline) | 6.69 |
 | One shuttle, MST tour | 5.05 |
 | Three shuttles, MST tour slices | **2.03** |
@@ -107,7 +111,9 @@ Fleet size (MST tour slices): 1 → 5.05, 2 → 3.91, **3 → 2.03**, 4 → 1.75
 **Read the 70% carefully.** About 24 points come from better routing (6.69 → 5.05); the rest comes from running three shuttles instead of one. These are **simulated results on estimated data**, not measurements from real shuttle operations.
 
 ![Wait comparison](report/figures/wait_comparison.png)
-![Fleet sensitivity](report/fleet_sensitivity.png)
+
+![Fleet sensitivity](report/figures/fleet_sensitivity.png)
+
 ![Tour costs](report/figures/tour_cost_comparison.png)
 
 More detail: [`docs/RESULTS.md`](docs/RESULTS.md), [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/ALGORITHMS.md`](docs/ALGORITHMS.md).
@@ -138,7 +144,7 @@ Measured runtimes against these curves: `report/runtime_vs_complexity.png`.
 | ![Result](docs/screenshots/05_result.png) | ![Trust](docs/screenshots/06_trust.png) |
 
 ## 13. Testing
-`pytest -q` runs **204 test cases**: Dijkstra vs Bellman-Ford vs Floyd-Warshall, Prim vs Kruskal, Held-Karp vs brute force and vs the heuristics, and knapsack vs brute force over many random seeds, plus two dashboard checks. `scripts/verify_results.py` re-derives the headline numbers (11 checks) (key numbers present, six sections, no external resources).
+`pytest -q` runs **204 test cases**: Dijkstra vs Bellman-Ford vs Floyd-Warshall, Prim vs Kruskal, Held-Karp vs brute force and vs the heuristics, and knapsack vs brute force over many random seeds, plus two dashboard checks. `scripts/verify_results.py` re-derives the headline numbers (11 checks).
 
 ## 14. Limitations
 - Only the stop coordinates are real. Roads, 20 km/h speed, demand, fleet and shifts are **estimates** (each CSV is marked `# ESTIMATE`).
@@ -156,9 +162,9 @@ Not implemented yet: survey real roads and boardings, add dwell time and time-of
 - Notebook: [`notebooks/walkthrough.ipynb`](notebooks/walkthrough.ipynb)
 
 ## Credits and acknowledgements
-DAA team project, Woxsen University, B.Tech CSE (AI & ML), faculty Dr. Syed Javeed Pasha
+DAA team project, Woxsen University, B.Tech CSE (AI & ML), faculty Dr. Syed Javeed Pasha.
 
-Team: G Madhan , D Ritheek , M. Srilakshmi, B. Deekshan, P. Priyakaran, .
+Team: G Madhan, D Ritheek, M. Srilakshmi, B. Deekshan, P. Priyakaran.
 
 **My contribution (G. Madhan), as listed in the project report:** wait-time model, fleet-size sensitivity, nearest-neighbour and MST-preorder tours, interactive dashboard, presentation script and viva preparation. The other algorithms were implemented by teammates.
 
