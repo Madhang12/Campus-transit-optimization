@@ -1,6 +1,6 @@
 # CampusRoute — Intelligent Campus Transportation Optimization
 
-**[🚀 LIVE INTERACTIVE DEMO — CLICK HERE](https://YOUR-GITHUB-USERNAME.github.io/campus-transit-optimization/)**
+**[ LIVE INTERACTIVE DEMO — CLICK HERE](https://YOUR-GITHUB-USERNAME.github.io/campus-transit-optimization/)**
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![Tests](https://img.shields.io/badge/tests-204%20cases-brightgreen) ![Dashboard](https://img.shields.io/badge/dashboard-offline%20HTML%2FJS-informational)
 
@@ -156,9 +156,9 @@ Not implemented yet: survey real roads and boardings, add dwell time and time-of
 - Notebook: [`notebooks/walkthrough.ipynb`](notebooks/walkthrough.ipynb)
 
 ## Credits and acknowledgements
-DAA team project, Woxsen University, B.Tech CSE (AI & ML), faculty Dr. Syed Javeed Pasha. Original repository: [ritheekyadav01-afk/DAA_PBL](https://github.com/ritheekyadav01-afk/DAA_PBL).
+DAA team project, Woxsen University, B.Tech CSE (AI & ML), faculty Dr. Syed Javeed Pasha
 
-Team: D. Ritheek (lead), M. Srilakshmi, B. Deekshan, P. Priyakaran, G. Madhan.
+Team: G Madhan , D Ritheek , M. Srilakshmi, B. Deekshan, P. Priyakaran, .
 
 **My contribution (G. Madhan), as listed in the project report:** wait-time model, fleet-size sensitivity, nearest-neighbour and MST-preorder tours, interactive dashboard, presentation script and viva preparation. The other algorithms were implemented by teammates.
 
