@@ -6,7 +6,7 @@
 
 A shuttle-planning pipeline that models 14 campus stops as a weighted graph and applies classic algorithms (MST, shortest paths, greedy scheduling, knapsack DP, Travelling Salesman) to cut **modelled** average passenger waiting time from **6.69 to 2.03 minutes**. An interactive dashboard lets you explore the results in a browser.
 
-> **Project origin.** This is a Design and Analysis of Algorithms (DAA) team project at Woxsen University. This repository is my individual portfolio copy; the original team repository is [ritheekyadav01-afk/DAA_PBL](https://github.com/ritheekyadav01-afk/DAA_PBL). See [Credits](#credits-and-acknowledgements) for the team and my own contributions.
+> **Project origin.** This is a Design and Analysis of Algorithms (DAA) team project at Woxsen University. 
 
 ![Dashboard hero screen](docs/screenshots/01_hero.png)
 
