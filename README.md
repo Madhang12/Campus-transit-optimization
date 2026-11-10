@@ -1,6 +1,6 @@
 # CampusRoute — Intelligent Campus Transportation Optimization
 
-**[ LIVE INTERACTIVE DEMO ](https://madhang12.github.io/campus-transit-optimization/)**
+**[ LIVE INTERACTIVE DEMO ](https://madhang12.github.io/Campus-transit-optimization/)**
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![Tests](https://img.shields.io/badge/tests-204%20cases-brightgreen) ![Dashboard](https://img.shields.io/badge/dashboard-offline%20HTML%2FJS-informational)
 
