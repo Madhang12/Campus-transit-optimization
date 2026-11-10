@@ -1,8 +1,7 @@
 # CampusRoute — Intelligent Campus Transportation Optimization
 
-**[🚀 OPEN LIVE INTERACTIVE DEMO](https://madhang12.github.io/Campus-transit-optimization/)**
-
-**[📂 VIEW GITHUB REPOSITORY](https://github.com/madhang12/Campus-transit-optimization)**
+**[ OPEN LIVE INTERACTIVE DEMO](https://madhang12.github.io/Campus-transit-optimization/)**
+[📄 VIEW PROJECT REPORT (PDF)](docs/DAA_Project_Report.pdf)
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![Tests](https://img.shields.io/badge/tests-204%20cases-brightgreen) ![Dashboard](https://img.shields.io/badge/dashboard-offline%20HTML%2FJS-informational)
 
